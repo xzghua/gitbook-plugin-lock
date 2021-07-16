@@ -1,57 +1,63 @@
 {
   "name": "gitbook-plugin-lock",
-  "version": "v0.0.1",
+  "version": "0.0.83",
   "description": "Gitbook 页面加锁",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xzghua/gitbook-plugin-statistics.git"
+    "url": "git+https://github.com/xzghua/gitbook-plugin-lock.git"
   },
-  "keywords": ["gitbook", "plugin", "baidu", "cnzz", "statistics"],
+  "keywords": [
+    "gitbook",
+    "plugin",
+    "lock",
+    "page-lock",
+    "wechat"
+  ],
   "author": "xzghua",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/xzghua/gitbook-plugin-statistics/issues"
+    "url": "https://github.com/xzghua/gitbook-plugin-lock.git/issues"
   },
-  "homepage": "https://github.com/xzghua/gitbook-plugin-statistics#readme",
+  "homepage": "https://github.com/xzghua/gitbook-plugin-lock.git#readme",
   "engines": {
     "gitbook": "*"
   },
   "gitbook": {
     "properties": {
-      "bd_token": {
-        "description": "百度统计的token",
+      "lockTokenKey": {
+        "description": "存到本地的token key",
         "required": false,
         "type": "string"
       },
-      "bd_url": {
-        "description": "百度统计js地址",
-        "default":"https://hm.baidu.com/hm.js",
+      "articleHeightPercent": {
+        "description": "你想给别人看到文章的高度",
         "required": false,
+        "type": "number"
+      },
+      "wechatName": {
+        "description": "公众号的名称",
+        "required": true,
         "type": "string"
       },
-      "cnzz_id": {
-        "description": "cnzz统计参数里的id",
-        "required": false,
-        "type": "int"
-      },
-      "cnzz_url": {
-        "description": "cnzz统计js地址",
-        "default":"https://s95.cnzz.com/z_stat.php",
-        "required": false,
+      "wechatQr": {
+        "description": "公众号图",
+        "required": true,
         "type": "string"
       },
-      "google_url": {
-        "description": "google分析js地址",
-        "default":"https://www.googletagmanager.com/gtag/js",
-        "required": false,
-        "type": "string"
+      "verificationCode": {
+        "description": "回复的关键字",
+        "required": true,
+        "type": "array"
       },
-      "google_id": {
-        "description": "google分析跟踪ID",
+      "allPage": {
+        "description": "是否所有页面都适用",
         "required": false,
-        "type": "string"
+        "type": "bool"
       }
     }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
